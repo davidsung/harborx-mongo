@@ -44,8 +44,6 @@ lazy val mongo = (project in file(".")).
       "org.mongodb.scala" %% "mongo-scala-driver" % "2.1.0",
       // Rx
       "org.reactivestreams" % "reactive-streams" % "1.0.1",
-      // config
-      "com.typesafe" % "config" % "1.3.0",
       // scalatest
       "org.scalatest" %% "scalatest" % "3.0.2" % "test",
       // akka stream for testing
