@@ -1,0 +1,10 @@
+.idea/
+target/
+*.log
+.idea_modules/
+*.ipr
+*.iws
+out/
+*.iml
+*.history
+.DS_Store

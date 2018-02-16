@@ -1,0 +1,20 @@
+language: scala
+jdk: oraclejdk8
+scala:
+  - 2.11.12
+  - 2.12.4
+sudo: required
+services:
+  - mongodb
+cache:
+  directories:
+    - $HOME/.ivy2/cache
+    - $HOME/.sbt/launchers
+script:
+  - travis_retry sbt ++$TRAVIS_SCALA_VERSION test
+before_script:
+  - sleep 5
+  - mongo test --eval 'db.createUser({user:"harborx",pwd:"test",roles:["readWrite"]});'
+before_cache:
+  - find $HOME/.sbt -name "*.lock" | xargs rm
+  - find $HOME/.ivy2 -name "ivydata-*.properties" | xargs rm
