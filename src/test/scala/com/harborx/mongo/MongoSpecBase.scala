@@ -16,5 +16,5 @@ abstract class MongoSpecBase
 }
 
 object MongoDAO {
-  val mongoClient: MongoClient = MongoClient("mongodb://harborx:test@127.0.0.1:27017/?authSource=admin")
+  val mongoClient: MongoClient = MongoClient("mongodb://127.0.0.1:27017/")
 }
