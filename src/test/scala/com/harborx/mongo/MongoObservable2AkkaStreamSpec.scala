@@ -10,10 +10,9 @@ import org.mongodb.scala.bson.codecs.DEFAULT_CODEC_REGISTRY
 import org.mongodb.scala.bson.collection.immutable.Document
 import org.scalatest.time.{Seconds, Span}
 
-class MongoObservable2AkkaStreamSpec
-  extends MongoSpecBase with TestKitBase {
+class MongoObservable2AkkaStreamSpec extends MongoSpecBase with TestKitBase {
 
-  override implicit val system: ActorSystem = ActorSystem("MongoObservable2AkkaStreamSpec")
+  implicit lazy val system: ActorSystem = ActorSystem("MongoObservable2AkkaStreamSpec")
 
   implicit val futureConfig: PatienceConfig = PatienceConfig(timeout = scaled(Span(2, Seconds)))
 
